@@ -11,9 +11,15 @@ module.exports = {
         sourceType: 'module',
     },
     rules: {
-        "@typescript-eslint/interface-name-prefix": [
-            "error", {
-                "prefixWithI": "always"
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "interface",
+                "format": ["PascalCase"],
+                "custom": {
+                    "regex": "^I[A-Z]",
+                    "match": false
+                }
             }
         ],
         "@typescript-eslint/no-floating-promises": [
